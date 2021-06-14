@@ -1,0 +1,6 @@
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf/src/main/java/com/howtodoinjava/demo/model/EmployeeEntity.java
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf/src/main/java/com/howtodoinjava/demo/exception/RecordNotFoundException.java
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf/src/main/java/com/howtodoinjava/demo/repository/EmployeeRepository.java
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf/src/main/java/com/howtodoinjava/demo/web/EmployeeMvcController.java
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf/src/main/java/com/howtodoinjava/demo/DemoApplication.java
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf/src/main/java/com/howtodoinjava/demo/service/EmployeeService.java

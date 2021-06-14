@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Startseite Cmis Tests</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+	<div class="container my-2">
+		<div class="card">
+			<div class="card-body">
+				<select id="percentage" name="percentage">
+					<option th:each="i : ${#numbers.sequence(0, 100)}" th:value="${i}"
+						th:text="${i}" th:selected="${i==75}"></option>
+				</select>
+				<p class="my-5">
+					<a href="/changeUserSettings" class="btn btn-primary"> <i
+						class="fas fa-user-plus ml-2"> Change User Settings </i></a>
+				</p>
+				<p class="my-5">
+					<a href="/startAdminSession" class="btn btn-primary"> <i
+						class="fas fa-user-plus ml-2"> Start Admin CmisSession </i></a>
+				</p>
+				<p class="my-5">
+					<a href="/startUserSession" class="btn btn-primary"> <i
+						class="fas fa-user-plus ml-2"> Start User CmisSession </i></a>
+				</p>
+				<p class="my-5">
+					<a href="/getListTopFolder" class="btn btn-primary"> <i
+						class="fas fa-user-plus ml-2"> Get List Top Folder (as Admin)
+					</i></a>
+				</p>
+				<p class="my-5">
+					<a href="/getListTopFolder" class="btn btn-primary"> <i
+						class="fas fa-user-plus ml-2"> Get List Top Folder (as User) </i></a>
+				</p>
+				<p class="my-5">
+					<a href="/createTestFolder" class="btn btn-primary"> <i
+						class="fas fa-user-plus ml-2"> Create Test-Folder in Root Directory</i></a>
+				</p>
+				<p class="my-5">
+					<a href="/deleteTestFolder" class="btn btn-primary"> <i
+						class="fas fa-user-plus ml-2"> Delete Test-Folder in Root Directory</i></a>
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

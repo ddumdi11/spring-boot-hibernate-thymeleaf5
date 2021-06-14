@@ -1,0 +1,10 @@
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf4/src/main/java/de/cmis/test/model/CmisTestEntity.java
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf4/src/main/java/de/cmis/test/sessions/AdminSessionSingleton.java
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf4/src/main/java/de/cmis/test/endpoints/Navigation.java
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf4/src/main/java/de/cmis/test/web/CmisTestMvcController.java
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf4/src/main/java/de/cmis/test/service/CmisTestService.java
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf4/src/main/java/de/cmis/test/Constants/AlfrescoConstants.java
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf4/src/main/java/de/cmis/test/sessions/UserSessionSingleton.java
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf4/src/main/java/de/cmis/test/repository/CmisTestRepository.java
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf4/src/main/java/de/cmis/test/TestAnwendung.java
+/home/zarko/crunchify-workspace/spring-boot-hibernate-thymeleaf4/src/main/java/de/cmis/test/exceptions/RecordNotFoundException.java

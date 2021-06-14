@@ -1,0 +1,10 @@
+de/cmis/test/TestAnwendung.class
+de/cmis/test/service/CmisTestService.class
+de/cmis/test/exceptions/RecordNotFoundException.class
+de/cmis/test/repository/CmisTestRepository.class
+de/cmis/test/model/CmisTestEntity.class
+de/cmis/test/sessions/AdminSessionSingleton.class
+de/cmis/test/web/CmisTestMvcController.class
+de/cmis/test/sessions/UserSessionSingleton.class
+de/cmis/test/Constants/AlfrescoConstants.class
+de/cmis/test/endpoints/Navigation.class
