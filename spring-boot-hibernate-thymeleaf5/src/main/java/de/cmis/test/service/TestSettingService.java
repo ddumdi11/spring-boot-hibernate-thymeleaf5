@@ -16,7 +16,7 @@ public class TestSettingService {
 	TestSettingRepository settingRepo;
 
 	public TestSettingEntity getActiveSetting() throws RecordNotFoundException {
-		TestSettingEntity activeSetting = null;
+		TestSettingEntity activeSetting = new TestSettingEntity();
 		List<TestSettingEntity> results = (List<TestSettingEntity>) settingRepo.findAll();
 
 		if (results.size() > 0) {
@@ -25,8 +25,10 @@ public class TestSettingService {
 					activeSetting = iter;
 				}
 			}
-		}
-
+		} else {
+			activeSetting = null;
+		}		
+		
 		return activeSetting;
 	}
 

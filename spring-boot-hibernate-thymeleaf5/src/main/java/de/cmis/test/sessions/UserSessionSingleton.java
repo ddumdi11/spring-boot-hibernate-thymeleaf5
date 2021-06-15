@@ -12,6 +12,7 @@ import org.apache.chemistry.opencmis.commons.SessionParameter;
 import org.apache.chemistry.opencmis.commons.enums.BindingType;
 import org.apache.chemistry.opencmis.commons.exceptions.CmisConnectionException;
 
+import de.cmis.test.exceptions.RecordNotFoundException;
 
 public class UserSessionSingleton {
 
@@ -27,16 +28,15 @@ public class UserSessionSingleton {
 		return instance;
 	}
 
-	public Session getUserSession(String connectionName, String username, String pwd) {
+	public Session getUserSession(String userName, String userPwd, String bindingUrl) throws RecordNotFoundException {
 		Session session = null;
 
 		// No connection to Alfresco available, create a new one
 		SessionFactory sessionFactory = SessionFactoryImpl.newInstance();
 		Map<String, String> parameters = new HashMap<String, String>();
-		parameters.put(SessionParameter.USER, username);
-		parameters.put(SessionParameter.PASSWORD, pwd);
-		parameters.put(SessionParameter.ATOMPUB_URL,
-				"http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom");
+		parameters.put(SessionParameter.USER, userName);
+		parameters.put(SessionParameter.PASSWORD, userPwd);
+		parameters.put(SessionParameter.ATOMPUB_URL, bindingUrl);
 		parameters.put(SessionParameter.BINDING_TYPE, BindingType.ATOMPUB.value());
 		parameters.put(SessionParameter.COMPRESSION, "true");
 		parameters.put(SessionParameter.CACHE_TTL_OBJECTS, "0");

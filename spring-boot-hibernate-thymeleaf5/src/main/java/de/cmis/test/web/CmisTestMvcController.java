@@ -143,8 +143,8 @@ public class CmisTestMvcController {
 	}
 
 	@RequestMapping(path = { "/startUserSession" })
-	public String startUserSession(Model model, String connectionName, String username, String pwd) {
-		service.startUserSession(connectionName, username, pwd);
+	public String startUserSession(Model model) throws RecordNotFoundException {
+		service.startUserSession();
 		return "redirect:/";
 	}
 
