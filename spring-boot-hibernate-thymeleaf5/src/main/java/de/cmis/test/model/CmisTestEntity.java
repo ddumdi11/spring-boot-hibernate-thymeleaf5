@@ -16,7 +16,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name="TBL_CMISTESTS")
+@Table(name="TBL_CMISTEST")
 @Getter @Setter @NoArgsConstructor @ToString
 public class CmisTestEntity {
 

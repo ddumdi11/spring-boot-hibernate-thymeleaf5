@@ -15,47 +15,48 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "TBL_CMISUSER")
+@Table(name = "TBL_CMISBINDING")
 @Getter
 @Setter
 @NoArgsConstructor
-public class CmisUserEntity {
+public class CmisBindingEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "User_Name")
-	private String userName;
+	@Column(name = "Binding_Name")
+	private String bindingName;
 
-	@Column(name = "User_Pwd")
-	private String userPwd;
+	@Column(name = "Binding_Url")
+	private String bindingUrl;
 
 	@Column(name = "Create_Date")
 	private String createDate;
 
-	public void createUSer(String userName, String userPwd) {
-		this.userName = userName;
-		this.userPwd = userPwd;
+
+	public void createBinding(String bindingName, String bindingUrl) {
+		this.bindingName = bindingName;
+		this.bindingUrl = bindingUrl;
 		setCreateDate();
 	}
 	
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setBindingName(String bindingName) {
+		this.bindingName = bindingName;
 	}
 	
-	public String getUserName() {
-		return userName;
+	public String getBindingName() {
+		return bindingName;
 	}
 	
-	public void setUserPwd(String userPwd) {
-		this.userPwd = userPwd;
+	public void setBindingUrl(String bindingUrl) {
+		this.bindingUrl = bindingUrl;
 	}
 	
-	public String getUserPwd() {
-		return userPwd;
+	public String getBindingUrl() {
+		return bindingUrl;
 	}
-	
+
 	public void setCreateDate() {
 		LocalDateTime now = LocalDateTime.now();
 		DateTimeFormatter df = DateTimeFormatter.ofPattern("dd.MM.yyyy kk:mm");
@@ -64,8 +65,8 @@ public class CmisUserEntity {
 	
 	@Override
     public String toString() {
-        return "UserEntity [id=" + id + ", userName=" + userName + 
-                ", userPwd=" + userPwd + "]";
+        return "BindingEntity [id=" + id + ", bindingName=" + bindingName + 
+                ", bindingUrl=" + bindingUrl + "]";
     }
 
 }

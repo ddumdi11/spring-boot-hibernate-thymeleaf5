@@ -41,7 +41,6 @@ public class CmisUserService {
 	public CmisUserEntity createOrUpdateUser(CmisUserEntity entity) {
 		if (entity.getId() == null) {
 			entity = userRepo.save(entity);
-
 			return entity;
 		} else {
 			Optional<CmisUserEntity> user = userRepo.findById(entity.getId());
@@ -50,7 +49,7 @@ public class CmisUserService {
 				CmisUserEntity newEntity = user.get();
 				newEntity.setUserName(entity.getUserName());
 				newEntity.setUserPwd(entity.getUserPwd());
-				newEntity.setUserStatus(entity.getUserStatus());
+				newEntity.setCreateDate();
 
 				newEntity = userRepo.save(newEntity);
 

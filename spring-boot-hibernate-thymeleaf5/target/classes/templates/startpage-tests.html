@@ -16,39 +16,70 @@
 	<div class="container my-2">
 		<div class="card">
 			<div class="card-body">
-				<select id="percentage" name="percentage">
-					<option th:each="i : ${#numbers.sequence(0, 100)}" th:value="${i}"
-						th:text="${i}" th:selected="${i==75}"></option>
-				</select>
-				<p class="my-5">
-					<a href="/changeUserSettings" class="btn btn-primary"> <i
-						class="fas fa-user-plus ml-2"> Change User Settings </i></a>
-				</p>
-				<p class="my-5">
-					<a href="/startAdminSession" class="btn btn-primary"> <i
-						class="fas fa-user-plus ml-2"> Start Admin CmisSession </i></a>
-				</p>
-				<p class="my-5">
-					<a href="/startUserSession" class="btn btn-primary"> <i
-						class="fas fa-user-plus ml-2"> Start User CmisSession </i></a>
-				</p>
-				<p class="my-5">
-					<a href="/getListTopFolder" class="btn btn-primary"> <i
-						class="fas fa-user-plus ml-2"> Get List Top Folder (as Admin)
-					</i></a>
-				</p>
-				<p class="my-5">
-					<a href="/getListTopFolder" class="btn btn-primary"> <i
-						class="fas fa-user-plus ml-2"> Get List Top Folder (as User) </i></a>
-				</p>
-				<p class="my-5">
-					<a href="/createTestFolder" class="btn btn-primary"> <i
-						class="fas fa-user-plus ml-2"> Create Test-Folder in Root Directory</i></a>
-				</p>
-				<p class="my-5">
-					<a href="/deleteTestFolder" class="btn btn-primary"> <i
-						class="fas fa-user-plus ml-2"> Delete Test-Folder in Root Directory</i></a>
-				</p>
+				<div th:switch="${activeSetting}" class="container my-5">
+					<p class="my-5">
+						<a href="/setTestSetting" class="btn btn-primary"> <i
+							class="fas fa-user-plus ml-2"> Neue Testeinstellung anlegen </i></a>
+					</p>
+					<div class="col-md-10">
+						<h2 th:case="null">Noch keine Testeinstellung vorhanden!</h2>
+						<div th:case="*">
+							<table class="table table-striped table-responsive-md">
+								<thead>
+									<tr>
+										<th>User Name</th>
+										<th>Binding Name</th>
+										<th>IsActive Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td th:text="${userName}"></td>
+										<td th:text="${bindingName}"></td>
+										<td th:text="true"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p></p>
+					<p class="my-5">
+						<a href="/listUsers" class="btn btn-primary"> <i
+							class="fas fa-user-plus ml-2"> List/Add/Change User </i></a>
+					</p>
+					<p class="my-5">
+						<a href="/listBindings" class="btn btn-primary"> <i
+							class="fas fa-user-plus ml-2"> List/Add/Change Binding </i></a>
+					</p>
+					<p class="my-5">
+						<a href="/startAdminSession" class="btn btn-primary"> <i
+							class="fas fa-user-plus ml-2"> Start Admin CmisSession </i></a>
+					</p>
+					<p class="my-5">
+						<a href="/startUserSession" class="btn btn-primary"> <i
+							class="fas fa-user-plus ml-2"> Start User CmisSession </i></a>
+					</p>
+					<p class="my-5">
+						<a href="/getListTopFolder" class="btn btn-primary"> <i
+							class="fas fa-user-plus ml-2"> Get List Top Folder (as Admin)
+						</i></a>
+					</p>
+					<p class="my-5">
+						<a href="/getListTopFolder" class="btn btn-primary"> <i
+							class="fas fa-user-plus ml-2"> Get List Top Folder (as User)
+						</i></a>
+					</p>
+					<p class="my-5">
+						<a href="/createTestFolder" class="btn btn-primary"> <i
+							class="fas fa-user-plus ml-2"> Create Test-Folder in Root
+								Directory</i></a>
+					</p>
+					<p class="my-5">
+						<a href="/deleteTestFolder" class="btn btn-primary"> <i
+							class="fas fa-user-plus ml-2"> Delete Test-Folder in Root
+								Directory</i></a>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>

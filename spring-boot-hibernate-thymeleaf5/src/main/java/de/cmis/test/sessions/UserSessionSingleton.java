@@ -12,7 +12,6 @@ import org.apache.chemistry.opencmis.commons.SessionParameter;
 import org.apache.chemistry.opencmis.commons.enums.BindingType;
 import org.apache.chemistry.opencmis.commons.exceptions.CmisConnectionException;
 
-import de.cmis.test.Constants.AlfrescoConstants;
 
 public class UserSessionSingleton {
 
