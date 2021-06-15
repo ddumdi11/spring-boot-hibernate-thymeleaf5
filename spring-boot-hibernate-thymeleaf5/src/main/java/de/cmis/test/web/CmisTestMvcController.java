@@ -172,5 +172,11 @@ public class CmisTestMvcController {
 		service.deleteTestFolder();
 		return "redirect:/";
 	}
+	
+	@RequestMapping(path = { "/curlTest1" })
+	public String curlTest(Model model) throws RecordNotFoundException {
+		service.curlTest1();
+		return "redirect:/";
+	}
 
 }

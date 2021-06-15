@@ -36,6 +36,13 @@ public class CmisTestEntity {
     @Column(name="Test_Datum")
     private String testDatum;
     
+    public void setAll(String testName, String testKategorie, String testErgebnis) {
+    	this.testName = testName;
+    	this.testKategorie = testKategorie;
+    	this.testErgebnis = testErgebnis;
+    	setTestDatum();
+    }
+    
     public void setTestName (String testName) {
     	this.testName = testName;
     }
