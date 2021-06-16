@@ -173,9 +173,15 @@ public class CmisTestMvcController {
 		return "redirect:/";
 	}
 	
-	@RequestMapping(path = { "/curlTest1" })
-	public String curlTest(Model model) throws RecordNotFoundException {
-		service.curlTest1();
+	@RequestMapping(path = { "/entryPoint" })
+	public String entryPoint(Model model) throws RecordNotFoundException {
+		service.testEntryPoint();
+		return "redirect:/";
+	}
+	
+	@RequestMapping(path = { "/getNodesRootFolder" })
+	public String getNodesRootFolder(Model model) throws RecordNotFoundException {
+		service.getNodesRootFolder();
 		return "redirect:/";
 	}
 

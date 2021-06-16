@@ -33,7 +33,7 @@ public class Navigation {
 		}
 	}
 	
-	public List<String> getListTopFolder() {
+	public static List<String> getListTopFolder() {
 		List<String> topFolderList = new ArrayList<>();
 		Session session = AdminSessionSingleton.getInstance().getAdminSession();
 		Folder root = session.getRootFolder();

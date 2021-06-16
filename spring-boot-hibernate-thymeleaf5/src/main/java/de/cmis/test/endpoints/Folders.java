@@ -19,7 +19,7 @@ import de.cmis.test.sessions.AdminSessionSingleton;
 
 public class Folders {
 
-	public Folder createFolder() {
+	public static Folder createFolder() {
 		Session session = AdminSessionSingleton.getInstance().getAdminSession();
 		String folderName = "OpenCMISTest";
 		Folder parentFolder = session.getRootFolder();
@@ -47,7 +47,7 @@ public class Folders {
 		return newFolder;
 	}
 
-	public void deleteFolder() {
+	public static void deleteFolder() {
 		Session session = AdminSessionSingleton.getInstance().getAdminSession();
 		String folderName = "OpenCMISTest";
 		String folderPath = "/";
@@ -69,7 +69,7 @@ public class Folders {
 
 	}
 
-	private CmisObject getObject(Session session, Folder parentFolder, String objectName) {
+	private static CmisObject getObject(Session session, Folder parentFolder, String objectName) {
 		CmisObject object = null;
 		try {
 			String path2Object = parentFolder.getPath();
@@ -85,7 +85,7 @@ public class Folders {
 		return object;
 	}
 
-	private String date2String(Date date) {
+	private static String date2String(Date date) {
 		return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z").format(date);
 	}
 

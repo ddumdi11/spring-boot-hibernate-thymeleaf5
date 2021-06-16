@@ -9,7 +9,7 @@ import org.apache.chemistry.opencmis.client.api.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import de.cmis.test.curl.CurlTest;
+import de.cmis.test.categories.CurlTests;
 import de.cmis.test.endpoints.Folders;
 import de.cmis.test.endpoints.Navigation;
 import de.cmis.test.exceptions.RecordNotFoundException;
@@ -105,8 +105,7 @@ public class CmisTestService {
 		testEntity.setTestDatum();
 		List<String> topFolderList = null;
 		try {
-			Navigation navigation = new Navigation();
-			topFolderList = navigation.getListTopFolder();
+			topFolderList = Navigation.getListTopFolder();
 			testEntity.setTestErgebnis("positiv");
 		} catch (Exception e) {
 			testEntity.setTestErgebnis("negativ");
@@ -122,8 +121,7 @@ public class CmisTestService {
 		testEntity.setTestKategorie("Objects / Folder");
 		testEntity.setTestDatum();
 		try {
-			Folders folders = new Folders();
-			Folder folder = folders.createFolder();
+			Folder folder = Folders.createFolder();
 			System.out.print("Neu erzeugter Ordner: " + folder.getName());
 			testEntity.setTestErgebnis("positiv");
 		} catch (Exception e) {
@@ -139,8 +137,7 @@ public class CmisTestService {
 		testEntity.setTestKategorie("Objects / Folder");
 		testEntity.setTestDatum();
 		try {
-			Folders folders = new Folders();
-			folders.deleteFolder();
+			Folders.deleteFolder();
 			testEntity.setTestErgebnis("positiv");
 		} catch (Exception e) {
 			testEntity.setTestErgebnis("negativ");
@@ -149,15 +146,30 @@ public class CmisTestService {
 		testRepo.save(testEntity);
 	}
 	
-	public void curlTest1() throws RecordNotFoundException {
+	public void testEntryPoint() throws RecordNotFoundException {
 		String[] params = activeSettingParams();
 		CmisTestEntity testEntity = new CmisTestEntity();
-		testEntity.setTestName("Curl Test 1");
+		testEntity.setTestName("Entry Point Atom");
 		testEntity.setTestKategorie("Curl Tests");
 		testEntity.setTestDatum();
 		try {
-			CurlTest curl1 = new CurlTest();
-			curl1.processCurl1(params);
+			CurlTests.entryPoint(params);
+			testEntity.setTestErgebnis("positiv");
+		} catch (Exception e) {
+			testEntity.setTestErgebnis("negativ");
+			System.err.println(e);
+		}
+		testRepo.save(testEntity);
+	}
+	
+	public void getNodesRootFolder() throws RecordNotFoundException {
+		String[] params = activeSettingParams();
+		CmisTestEntity testEntity = new CmisTestEntity();
+		testEntity.setTestName("Nodes Root-Folder");
+		testEntity.setTestKategorie("Curl Tests");
+		testEntity.setTestDatum();
+		try {			
+			CurlTests.getNodesRootFolder(params);
 			testEntity.setTestErgebnis("positiv");
 		} catch (Exception e) {
 			testEntity.setTestErgebnis("negativ");
