@@ -50,17 +50,17 @@ public class Folders {
 	public static void deleteFolder() {
 		Session session = AdminSessionSingleton.getInstance().getAdminSession();
 		String folderName = "OpenCMISTest";
-		String folderPath = "/";
-		String queryFolderByName = "cmis:name LIKE '" + folderPath + folderName + "'";
+		String queryFolderByName = "cmis:name LIKE '" + folderName + "'";
 		OperationContext oc = session.createOperationContext();
-		oc.setFilterString("cmis:objectId,cmis:folder,cmis:name,cmis:createdBy");
-		ItemIterable<CmisObject> results = session.queryObjects("cmis:folder",queryFolderByName, false, oc);
+		//oc.setFilterString("cmis:object");
+		ItemIterable<CmisObject> results = session.queryObjects("cmis:folder", queryFolderByName, false, oc);
+		// true = alle Versionen finden (erst ab CMIS 1.1 supported!)
 
 		for (CmisObject cmisObject : results) {
 		    Folder folder = (Folder) cmisObject; // it can only be a folder
 		    System.out.println(folder.getName() + " wird jetzt gelöscht!");
 		    try {
-				folder.delete(false); // Nicht alle Versionen löschen (true = alle Versionen löschen)
+				folder.delete(true); // (true = alle Versionen löschen, false = nicht alle Versionen löschen)
 				System.out.println("Ordner ist gelöscht!");
 			} catch (Exception e) {
 				System.out.println("Ordner lässt sich nicht löschen!");

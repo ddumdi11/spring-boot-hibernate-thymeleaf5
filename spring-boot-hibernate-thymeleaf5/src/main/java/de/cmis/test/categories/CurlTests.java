@@ -72,6 +72,7 @@ public class CurlTests {
 		String commandAuth = commandNoAuth + " -u " + userName + ":" + userPwd;
 
 		// Mit Authentifizierung
+		System.out.println("BindingUrl: " + bindingUrl);
 		System.out.println("Nodes des Rootfolders Abfrage mit Authentifizierung:\n" + commandAuth);
 		// Erwartet wird JSON Format
 		String outAtom = getOutputFromCurlCmd(commandAuth);

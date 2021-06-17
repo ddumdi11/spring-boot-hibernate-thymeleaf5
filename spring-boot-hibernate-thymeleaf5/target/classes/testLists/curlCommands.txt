@@ -1,0 +1,2 @@
+curl -v "http://localhost:8080/alfresco/api/-default-/public/cmis/versions/1.1/browser/?cmisselector=query&q=SELECT+cmis%3AsecondaryObjectTypeIds+from+cmis%3Afolder+WHERE+cmis%3Aname='Sites'"
+
