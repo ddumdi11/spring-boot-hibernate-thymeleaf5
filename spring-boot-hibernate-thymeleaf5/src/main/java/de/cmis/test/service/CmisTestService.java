@@ -4,6 +4,7 @@ package de.cmis.test.service;
 import java.util.List;
 
 
+
 import org.apache.chemistry.opencmis.client.api.Folder;
 import org.apache.chemistry.opencmis.client.api.Session;
 import org.springframework.beans.factory.annotation.Autowired;
